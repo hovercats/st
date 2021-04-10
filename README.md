@@ -2,7 +2,7 @@
 My simple fork of ST, with some patches, aswell as some minor changes
 
 
-Changes so far:
+#### Changes so far:
 - scrollback patch
 	- scroll keybindings:
 		- `alt + j/k`
@@ -11,3 +11,6 @@ Changes so far:
 		- `mousewheel up/down`
 - copy/paste 
 	- `alt + c/v`
+- Gruvbox default theme
+- Xresources patch
+	- Pywal compability
