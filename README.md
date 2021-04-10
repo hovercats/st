@@ -7,7 +7,7 @@ Changes so far:
 	- scroll keybindings:
 		- `alt + j/k`
 		- `alt + u/d` (faster)
-		- `alt + page up/down` (even faster)
+		- `page up/down` (even faster)
 		- `mousewheel up/down`
 - copy/paste 
 	- `alt + c/v`
