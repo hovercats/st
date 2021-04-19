@@ -14,4 +14,3 @@ My simple fork of ST, with some patches, aswell as some minor changes
 - Gruvbox default theme
 - Xresources patch
 	- Pywal compability
-- boxdraw patch
