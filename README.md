@@ -14,3 +14,6 @@ My simple fork of ST, with some patches, aswell as some minor changes
 - Gruvbox default theme
 - Xresources patch
 	- Pywal compability
+- font2 patch
+	- Liberation Mono as main font
+	- [Symbola font](https://fontlibrary.org/en/font/symbola) for unicode support.
