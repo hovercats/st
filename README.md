@@ -18,5 +18,5 @@ My simple fork of ST, with some patches, aswell as some minor changes
 	- Liberation Mono as main font
 	- [Symbola font](https://fontlibrary.org/en/font/symbola) for unicode support.
 - Zoom keybindings changed
-	- `alt + plus/minux` zoom in/out
+	- `alt + plus/minus` zoom in/out
 	- `alt + home` resets to default
