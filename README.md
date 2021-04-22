@@ -20,3 +20,8 @@ My simple fork of ST, with some patches, aswell as some minor changes
 - Zoom keybindings changed
 	- `alt + plus/minus` zoom in/out
 	- `alt + home` resets to default
+
+
+
+
+ST base is v0.8.4
