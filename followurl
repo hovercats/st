@@ -1,0 +1,9 @@
+#!/bin/sh
+
+BROWSER=surf
+
+regex="(((http|https|gopher|gemini|ftp|ftps|git)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$\#=_~-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)"
+
+url=$(grep -Eio "$regex" | dmenu -l 10 -p "Go:" -w "$WINDOWID") || exit
+
+$BROWSER "$url"
