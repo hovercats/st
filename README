@@ -14,6 +14,11 @@ Patches/Changes
 - Font2 patch
   - Tamzen as default font
   - Symbola as backup
+- Externalpipe patch
+  - Uses 2 simple scripts to follow/copy urls on screen using dmenu
+  - follow url with $BROWSER with 'alt + o'
+    - $BROWSER is set to surf in script.
+  - copy url with 'alt+y'
 - Personal colortheme
 
 
