@@ -2,6 +2,6 @@
 
 regex="(((http|https|gopher|gemini|ftp|ftps|git)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$\#=_~-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)"
 
-url=$(grep -Eio "$regex" | uniq | dmenu -l 10 -p "Go:" -w "$WINDOWID")
+url=$(grep -Ei "$regex" | uniq | dmenu -l 10 -p "Copy:" -w "$WINDOWID")
 
 echo "$url" | tr -d '\n' | xsel -i -b 
