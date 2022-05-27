@@ -19,7 +19,6 @@ Patches/Changes
   - follow url with $BROWSER with 'alt + o'
     - $BROWSER is set to surf in script.
   - copy url with 'alt+y'
-- blinking cursor patch
 - Personal colortheme
 
 
