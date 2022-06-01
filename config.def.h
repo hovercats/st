@@ -5,14 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Tamzen:pixelsize=14:antialias=true:autohint=true";
-/* Spare fonts */
-static char *font2[] = {
-	"Symbola:pixelsize=12:antialias=true:autohint=true", 
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
-};
-
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -103,35 +96,42 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
- [0] = "#071712", /* black    */
- [1] = "#a65549", /* red      */
- [2] = "#568077", /* green    */
- [3] = "#677F66", /* yellow   */
- [4] = "#8e5934", /* blue     */
- [5] = "#84584c", /* magenta  */
- [6] = "#166763", /* cyan     */
- [7] = "#807959", /* white    */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
 	/* 8 bright colors */
- [8]  = "#adb8b6", /* black   */
- [9] = "#e27463", /* red     */
- [10] = "#6f96a1", /* green   */
- [11] = "#ABCAB4", /* yellow  */
- [12] = "#bc7645", /* blue    */
- [13] = "#a3646f", /* magenta */
- [14] = "#1e8e89", /* cyan    */
- [15] = "#f9edad", /* white   */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
+	[255] = 0,
 
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
+
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -141,7 +141,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -176,8 +176,6 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_NO_MOD,            Button4, kscrollup,      {.i = 3} },
-	{ XK_NO_MOD,            Button5, kscrolldown,    {.i = 3} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -189,23 +187,20 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
-static char *copyurl[] = { "/bin/sh", "-c", "copyurl", "externalpipe", NULL  };
-static char *followurl[] = { "/bin/sh", "-c", "followurl", "externalpipe", NULL  };
-
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ Mod1Mask,             XK_KP_Add,      zoom,           {.f = +1} },
-	{ Mod1Mask,             XK_KP_Subtract, zoom,           {.f = -1} },
-	{ Mod1Mask,             XK_equal,       zoomreset,      {.f =  0} },
-	{ Mod1Mask,             XK_c,           clipcopy,       {.i =  0} },
-	{ Mod1Mask,             XK_v,           clippaste,      {.i =  0} },
+	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
+	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-  { XK_NO_MOD,            XK_Page_Up,     kscrollup,      {.i = 10} },
-  { XK_NO_MOD,            XK_Page_Down,   kscrolldown,    {.i = 10} },
-  { Mod1Mask,             XK_y,           externalpipe,   {.v = copyurl } },
-  { Mod1Mask,             XK_o,           externalpipe,   {.v = followurl } },
 };
 
 /*

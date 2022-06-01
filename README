@@ -3,25 +3,6 @@ st - simple terminal
 st is a simple terminal emulator for X which sucks less.
 
 
-Patches/Changes
----------------
-- Scrollback patch
-  - Scroll up/down with 'pkup/pgdown'
-  - Or mousewheel up/down
-- Copy/Paste with 'alt + c/v'
-- Zoom in/out with 'alt + +/-' 
-  - Reset with 'alt + ='
-- Font2 patch
-  - Tamzen as default font
-  - Symbola as backup
-- Externalpipe patch
-  - Uses 2 simple scripts to follow/copy urls on screen using dmenu
-  - follow url with $BROWSER with 'alt + o'
-    - $BROWSER is set to surf in script.
-  - copy url with 'alt+y'
-- Personal colortheme
-
-
 Requirements
 ------------
 In order to build st you need the Xlib header files.
@@ -50,3 +31,4 @@ See the man page for additional details.
 Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
+
