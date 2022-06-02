@@ -11,6 +11,9 @@ Patches/Changes
 - Copy/Paste with 'alt + c/v'
 - Zoom in/out with 'alt + +/-'
     - Reset with 'alt + ='
+- font2 patch
+    - Tamzen as main font
+    - Liberation Mono as backup
 
 
 Requirements
