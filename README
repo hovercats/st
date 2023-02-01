@@ -14,10 +14,6 @@ Patches/Changes
 - font2 patch
     - Tamzen as main font
     - Liberation Mono as backup
-- externalpipe patch
-    - followurl with 'alt + o'
-        - uses $BROWSER variable to follow urls
-    - copyurl with 'alt + y' (requires xsel)
 - Personal colors
 
 Requirements
